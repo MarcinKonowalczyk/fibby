@@ -23,7 +23,7 @@ install: build_wheel
 	pip install --force-reinstall dist/*.whl
 
 clean:
-	rm -rf .mypy_cache .pytest_cache .tox/
+	rm -rf .mypy_cache .pytest_cache
 	rm -rf _skbuild
 	rm -rf build dist MANIFEST.in
 	rm -rf fibbymodule.c ffib1-f2pywrappers.f
@@ -31,5 +31,8 @@ clean:
 	find . -name '*.egg-info' -type d | xargs rm -rf  
 	find . -name '__pycache__' -type d | xargs rm -rf  
 
-test:
-	python -m unittest discover -v -s tests
+test: build_inplace
+	pytest -v
+
+tox: clean
+	tox
