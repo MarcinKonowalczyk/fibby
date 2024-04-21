@@ -1,1 +1,7 @@
 .python-version
+_skbuild
+dist
+*.egg-info
+.tox
+__pycache__
+*.so
