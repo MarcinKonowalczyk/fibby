@@ -1,11 +1,7 @@
-import unittest
-
 from fibby import fibby
 
 
-class TestFibby(unittest.TestCase):
-    def test_fibby(self):
-        f = fibby.fib(10)
-        self.assertEqual(f[0], 0)
-        self.assertEqual(f[1], 1)
-        self.assertEqual(f[2], 1)
+def test_fibby():
+    f = fibby.fib(20)
+    assert len(f) == 20
+    assert f[-1] == 4181
