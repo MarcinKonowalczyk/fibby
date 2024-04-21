@@ -7,6 +7,7 @@ setup(
     license="MIT",
     packages=["fibby"],
     python_requires=">=3.7",
+    install_requires=["numpy"],
     cmake_with_sdist=True,
-    package_data={"fibby": ["fibby.so"]},
+    package_data={"fibby": ["fibby.pyi"]},
 )
