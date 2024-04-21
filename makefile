@@ -2,16 +2,24 @@
 
 .PHONY: all
 
-package:
+all: build_wheel list_wheel
+
+build_wheel: clean
 	python -m build --wheel . 
 
-list:
+list_wheel: build_wheel
 	unzip -l dist/*.whl
 
-build:
+build_sdist: clean
+	python -m build --sdist .
+
+list_sdist: build_sdist
+	tar -ztvf dist/*.tar.gz
+
+build_inplace: clean
 	python setup.py build_ext --inplace
 
-install:
+install: build_wheel
 	pip install --force-reinstall dist/*.whl
 
 clean:
