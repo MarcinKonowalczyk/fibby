@@ -1,0 +1,15 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module fibby ! in 
+    interface  ! in :fibby
+        subroutine fib(a,n) ! in :fibby:fib1.f
+            real*8 dimension(n),intent(out),depend(n) :: a
+            integer intent(in) :: n
+        end subroutine fib
+    end interface 
+end python module fibby
+
+! This file was auto-generated with f2py (version:1.26.4).
+! See:
+! https://web.archive.org/web/20140822061353/http://cens.ioc.ee/projects/f2py2e
