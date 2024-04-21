@@ -1,5 +1,5 @@
-import numpy as np
+import numpy.typing as npt
 
-def fib(n: int) -> np.ndarray:
+def fib(n: int) -> npt.Array[int]:
     """Calculate first n Fibonacci numbers."""
     ...
