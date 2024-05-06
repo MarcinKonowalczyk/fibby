@@ -1,6 +1,6 @@
 
 
-.PHONY: all
+.PHONY: all build_wheel list_wheel build_sdist list_sdist install clean test tox
 
 all: build_wheel list_wheel
 
